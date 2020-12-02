@@ -32,12 +32,21 @@ feather.addEventListener('click', transparent50percent);
 const button = document.querySelector('#toggle');
 const row = document.querySelector('#row')
 const switchBackground = () => {
-    row.style.backgroundColor = 'orange';
+    if(row.style.backgroundColor === 'white'){
+        row.style.backgroundColor = 'orange';
+    } else {
+        row.style.backgroundColor = 'white';
+    }
 }
 button.addEventListener('click', switchBackground);
 // 5
 const big = document.querySelector('#biggify');
-const hovered = () => {
+const hoverIn = () => {
     big.style.width = '200px';
 }
-big.addEventListener('mouseover', hovered);
+const hoverOut = () => {
+    big.style.width = '162px';
+
+}
+big.addEventListener('mouseover', hoverIn);
+big.addEventListener('mouseout', hoverOut);
